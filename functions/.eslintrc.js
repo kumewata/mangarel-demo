@@ -46,7 +46,8 @@ module.exports = {
     'newline-before-return': 'error',
     'no-console': 'warn',
     'no-continue': 'off',
-    'quotes': ['error', 'single', { 'avoidEscape': true }],
+    //'quotes': ['error', 'single', { 'avoidEscape': true }],
+    'quotes': 'off',
     'require-yield': 'error',
     'semi': ['error', 'always'],
 

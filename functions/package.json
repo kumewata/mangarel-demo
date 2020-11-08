@@ -8,6 +8,10 @@
     "start": "npm run shell",
     "test": "jest",
     "deploy": "firebase deploy --only functions",
+    "dbreset": "firebase firestore:delete --all-collections",
+    "dbreset:publishers": "firebase firestore:delete -y --shallow publishers",
+    "dbseed": "npm run dbseed:publishers",
+    "dbseed:publishers": "node lib/commands/dbseed.js publishers seeds/publishers.tsv",
     "logs": "firebase functions:log"
   },
   "engines": {
@@ -15,14 +19,26 @@
   },
   "main": "lib/index.js",
   "dependencies": {
+    "commander": "^6.2.0",
+    "csv-parse": "^4.14.0",
+    "date-fns": "^2.16.1",
+    "date-fns-timezone": "^0.1.4",
+    "firebase": "^8.0.1",
     "firebase-admin": "^9.2.0",
-    "firebase-functions": "^3.11.0"
+    "firebase-functions": "^3.11.0",
+    "lodash": "^4.17.20",
+    "node-fetch": "^2.6.1",
+    "puppeteer": "^5.4.1"
   },
   "devDependencies": {
     "@types/eslint": "^7.2.4",
     "@types/eslint-plugin-prettier": "^3.1.0",
     "@types/jest": "^26.0.15",
+    "@types/lodash": "^4.14.165",
+    "@types/node": "^14.14.6",
+    "@types/node-fetch": "^2.5.7",
     "@types/prettier": "^2.1.5",
+    "@types/puppeteer": "^5.4.0",
     "@typescript-eslint/eslint-plugin": "^4.6.1",
     "@typescript-eslint/parser": "^4.6.1",
     "eslint": "^7.13.0",

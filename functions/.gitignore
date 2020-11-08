@@ -13,3 +13,4 @@ node_modules/
 
 # secret info
 src/*-firebase-adminsdk.json
+lib/*-firebase-adminsdk.json
